@@ -30,4 +30,12 @@ export class TaskService {
       where: { id },
     });
   }
+
+  async deleteTask(id: number): Promise<Task> {
+    return await this.prismaService.task.delete({
+      where: {
+        id,
+      },
+    });
+  }
 }
